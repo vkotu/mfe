@@ -7,7 +7,6 @@ import {
 import { createBrowserHistory } from "history";
 import Header from "./components/Header";
 import Progress from "./components/Progress";
-import DashboardApp from "./components/DashboardApp";
 
 const AuthLazy = lazy(() => import("./components/AuthApp"));
 const MarketingLazy = lazy(() => import("./components/MarketingApp"));
