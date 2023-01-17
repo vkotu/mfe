@@ -1,107 +1,107 @@
 AWS Setup and Configuration Cheetsheet
 
 **S3 Bucket Creation and Configuration**
-Go to AWS Management Console and use the search bar to find S3
+        Go to AWS Management Console and use the search bar to find S3
 
-Click Create Bucket
+        Click Create Bucket
 
-Specify an AWS Region
+        Specify an AWS Region
 
-Provide unique Bucket Name and click Create Bucket
+        Provide unique Bucket Name and click Create Bucket
 
-Click the new Bucket you have created from the Bucket list.
+        Click the new Bucket you have created from the Bucket list.
 
-Select Properties
+        Select Properties
 
-Scroll down to Static website hosting and click Edit
+        Scroll down to Static website hosting and click Edit
 
-Change to Enable
+        Change to Enable
 
-Enter index.html in the Index document field
+        Enter index.html in the Index document field
 
-Click Save changes
+        Click Save changes
 
-Select Permissions
+        Select Permissions
 
-Click Edit in Block all public access
+        Click Edit in Block all public access
 
-Untick the Block all public access box.
+        Untick the Block all public access box.
 
-Click Save changes
+        Click Save changes
 
-Type confirm in the field and click Confirm
+        Type confirm in the field and click Confirm
 
-Find the Bucket Policy and click Edit
+        Find the Bucket Policy and click Edit
 
-Click Policy generator
+        Click Policy generator
 
-Change Policy type to S3 Bucket Policy
+        Change Policy type to S3 Bucket Policy
 
-Set Principle to *
+        Set Principle to *
 
-Set Action to Get Object
+        Set Action to Get Object
 
-Copy the S3 bucket ARN to add to the ARN field and add /* to the end.
-eg: arn:aws:s3:::mfe-dashboard/*
+        Copy the S3 bucket ARN to add to the ARN field and add /* to the end.
+        eg: arn:aws:s3:::mfe-dashboard/*
 
-Click Add Statement
+        Click Add Statement
 
-Click Generate Policy
+        Click Generate Policy
 
-Copy paste the generated policy text to the Policy editor
+        Copy paste the generated policy text to the Policy editor
 
-Click Save changes
+        Click Save changes
 
 
 **CloudFront setup**
-Go to AWS Management Console and use the search bar to find CloudFront
+        Go to AWS Management Console and use the search bar to find CloudFront
 
-Click Create distribution
+        Click Create distribution
 
-Set Origin domain to your S3 bucket
+        Set Origin domain to your S3 bucket
 
-Find the Default cache behavior section and change Viewer protocol policy to Redirect HTTP to HTTPS
+        Find the Default cache behavior section and change Viewer protocol policy to Redirect HTTP to HTTPS
 
-Scroll down and click Create Distribution
+        Scroll down and click Create Distribution
 
-After Distribution creation has finalized click the Distribution from the list, find its Settings and click Edit
+        After Distribution creation has finalized click the Distribution from the list, find its Settings and click Edit
 
-Scroll down to find the Default root object field and enter /container/latest/index.html
+        Scroll down to find the Default root object field and enter /container/latest/index.html
 
-Click Save changes
+        Click Save changes
 
-Click Error pages
+        Click Error pages
 
-Click Create custom error response
+        Click Create custom error response
 
-Change HTTP error code to 403: Forbidden
+        Change HTTP error code to 403: Forbidden
 
-Change Customize error response to Yes
+        Change Customize error response to Yes
 
-Set Response page path to /container/latest/index.html
+        Set Response page path to /container/latest/index.html
 
-Set HTTP Response Code to 200: OK
+        Set HTTP Response Code to 200: OK
 
 
 **Create IAM user**
-Go to AWS Management Console and use the search bar to find IAM
+        Go to AWS Management Console and use the search bar to find IAM
 
-In IAM dashboard, click Users in the left sidebar
+        In IAM dashboard, click Users in the left sidebar
 
-Click Add Users
+        Click Add Users
 
-Enter a unique name in the User name field
+        Enter a unique name in the User name field
 
-In Select AWS credential type tick Access Key - Programmatic access
+        In Select AWS credential type tick Access Key - Programmatic access
 
-Click Next: Permissions
+        Click Next: Permissions
 
-Select Attach existing policies directly
+        Select Attach existing policies directly
 
-Use search bar to find and tick AmazonS3FullAccess and CloudFrontFullAccess
+        Use search bar to find and tick AmazonS3FullAccess and CloudFrontFullAccess
 
-Click Next: Tags
+        Click Next: Tags
 
-Click Next: Review
+        Click Next: Review
 
-Click Create user
+        Click Create user
