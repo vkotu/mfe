@@ -5,7 +5,7 @@ import React, { useRef, useEffect } from "react";
 export default ({ onSignIn }) => {
   const ref = useRef(null);
   const history = useHistory();
-  console.log("hi Auth APP");
+  console.log("hi Auth APP here");
   useEffect(() => {
     const { onParentNavigate } = mount(ref.current, {
       initialPath: history.location.pathname,
