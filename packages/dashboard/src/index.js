@@ -1,2 +1,2 @@
 import("./bootstrap");
-console.log("Im auth index.js");
+console.log("Im dashboard index.js");
