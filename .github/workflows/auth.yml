@@ -1,4 +1,4 @@
-name: deploy-marketing
+name: deploy-auth
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 defaults:
   run:
-    working-directory: auth/marketing
+    working-directory: packages/auth
 
 jobs:
   build:
