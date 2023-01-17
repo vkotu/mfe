@@ -4,7 +4,6 @@ import {
   StylesProvider,
   createGenerateClassName,
 } from "@material-ui/core/styles";
-// import ç from "./components/MarketingApp";
 import Header from "./components/Header";
 import Progress from "./components/Progress";
 
